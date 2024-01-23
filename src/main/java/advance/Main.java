@@ -34,7 +34,7 @@ public class Main {
         }
 
         System.out.println();
-        Hand evaluate = Hand.evaluate(cards);
+        Hand evaluate = Hand.evaluateHand(cards);
         System.out.println("You have: " + evaluate.category().getLabel());
     }
 

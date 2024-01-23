@@ -14,7 +14,7 @@ import static java.util.stream.Collectors.groupingBy;
 public record Hand(Category category, Rank... ranks) implements Comparable<Hand> {
 
     /// Determine the type of hand e.g., Pair, Three of a Kind, etc.
-    public static Hand evaluate(List<Card> cards) {
+    public static Hand evaluateHand(List<Card> cards) {
         if (cards.size() != 5) {
             throw new IllegalArgumentException();
         }
@@ -38,6 +38,7 @@ public record Hand(Category category, Rank... ranks) implements Comparable<Hand>
         }
     }
 
+    // Compares first by category, then compare ranks
     @Override
     public int compareTo(Hand hand) {
         return comparing(Hand::category).thenComparing(Hand::ranks, Arrays::compare).compare(this, hand);
