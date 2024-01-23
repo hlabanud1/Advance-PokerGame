@@ -3,6 +3,7 @@ package advance;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class Deck {
 
@@ -31,7 +32,6 @@ public class Deck {
         Collections.shuffle(cards);
         selectedCards = cards.subList(0, 5);
     }
-
 
     @Override
     public String toString() {

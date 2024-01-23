@@ -1,6 +1,7 @@
 package advance;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Main {
@@ -10,13 +11,16 @@ public class Main {
         System.out.println("Shuffling ... Shuffling ... Shuffling ... ");
 
         Deck deck = new Deck();
-        // Simulate shuffling a standard deck of 52 cards
+        // Simulate shuffling a standard deck of 52 cards and randomly select 5 cards
         deck.shuffle();
 
-        System.out.println(deck);
+        //System.out.println(deck);
 
         List<Card> selectedCards = deck.getSelectedCards();
-        System.out.println(selectedCards);
+        Collections.sort(selectedCards, new CardComparator());
+
+        // The 5 selectedCards are sorted
+        //System.out.println(selectedCards);
 
         List<Card> cards = new ArrayList<>();
 

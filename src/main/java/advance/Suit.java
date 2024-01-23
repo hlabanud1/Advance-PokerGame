@@ -7,15 +7,15 @@ public enum Suit {
     HEARTS("\u2764"),
     SPADES("\u2660");
 
-    private final String value;
+    private final String symbol;
 
-    private Suit(String value) {
-        this.value = value;
+    private Suit(String symbol) {
+        this.symbol = symbol;
     }
 
     @Override
     public String toString() {
-        return this.value;
+        return this.symbol;
     }
 
 }

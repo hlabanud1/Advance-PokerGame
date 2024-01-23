@@ -13,6 +13,7 @@ import static java.util.stream.Collectors.groupingBy;
 
 public record Hand(Category category, Rank... ranks) implements Comparable<Hand> {
 
+    /// Determine the type of hand e.g., Pair, Three of a Kind, etc.
     public static Hand evaluate(List<Card> cards) {
         if (cards.size() != 5) {
             throw new IllegalArgumentException();
