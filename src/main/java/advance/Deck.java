@@ -30,7 +30,11 @@ public class Deck {
 
     public void shuffle() {
         Collections.shuffle(cards);
-        selectedCards = cards.subList(0, 5);
+    }
+
+    // Method to pass the size of the Hand
+    public void dealHand(int count) {
+        selectedCards = cards.subList(0, count);
     }
 
     @Override

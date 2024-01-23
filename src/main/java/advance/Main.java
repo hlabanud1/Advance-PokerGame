@@ -11,8 +11,11 @@ public class Main {
         System.out.println("Shuffling ... Shuffling ... Shuffling ... ");
 
         Deck deck = new Deck();
-        // Simulate shuffling a standard deck of 52 cards and randomly select 5 cards
+        // Simulate shuffling a standard deck of 52 cards
         deck.shuffle();
+
+        // randomly select first 5 cards from the shuffled deck
+        deck.dealHand(5);
 
         //System.out.println(deck);
 

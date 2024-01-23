@@ -15,8 +15,10 @@ public record Hand(Category category, Rank... ranks) implements Comparable<Hand>
 
     /// Determine the type of hand e.g., Pair, Three of a Kind, etc.
     public static Hand evaluateHand(List<Card> cards) {
+
+        // Only 5 cards permitted but that be changed
         if (cards.size() != 5) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Only 5 cards permitted");
         }
         var flush = cards.stream().map(Card::suit).distinct().count() == 1;
         var counts = cards.stream().collect(groupingBy(Card::rank, counting()));
